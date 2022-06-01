@@ -1,0 +1,66 @@
+﻿<Window x:Class="SubscriptionService.Pages.MoreDetailedService"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+      xmlns:local="clr-namespace:SubscriptionService.Pages"
+      mc:Ignorable="d"
+      Title="MoreDetailedService" MinWidth="500" MinHeight="500">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel >
+            <Label x:Name="indexService" Content="#0001" FontSize="16" FontWeight="Bold"/>
+            <Image Width="150" Height="150" Source="/SubscriptionService;component/Images/NoImage.jpg" />
+            <Label x:Name="typeService" Content="Журнал"/>
+            <Label x:Name="countSubscribers" Content="Подписчиков: 5"/>
+            <Label Content="Льготы:"/>
+            <TextBlock Margin="5 0 0 0" x:Name="typeBenefits" Text="Ветераны и участники ВОВ, инвалидов I и II групп" Width="150" TextWrapping="Wrap"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="0" Grid.Column="1">
+            <Label x:Name="nameService" Content="В МИРЕ ЖИВОТНЫХ" FontSize="18" FontWeight="Bold"/>
+            <Label Content="Цена:" FontSize="12" FontWeight="Bold"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="priceWithDilivery" Grid.Row="0" Grid.Column="0" Content="С доставкой: 350 руб."/>
+                <TextBox x:Name="termWithDelivery" Width="100" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" PreviewTextInput="OnInputOnlyDigit" MaxLines="1" MaxLength="2"/>
+                <Label Content="мес." Grid.Row="0" Grid.Column="2"/>
+                <Button x:Name="subWithDelivery" Grid.Row="0" Grid.Column="3" Width="100" Content="Подписаться" Click="OnSubWithDelivery_Click"/>
+
+                <Label x:Name="priceWithoutDilivery" Grid.Row="1" Grid.Column="0" Content="Без доставки: 150 руб."/>
+                <TextBox x:Name="termWithoutDelivery" Width="100" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" PreviewTextInput="OnInputOnlyDigit" MaxLines="1" MaxLength="2"/>
+                <Label Content="мес." Grid.Row="1" Grid.Column="2"/>
+                <Button x:Name="subWithoutDelivery" Grid.Row="1" Grid.Column="3" Width="100" Content="Подписаться" Click="OnSubWithoutDelivery_Click"/>
+            </Grid>
+        </StackPanel>
+
+        <Grid x:Name="Stats" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+            <StackPanel x:Name="StatsGraph">
+                <Label x:Name="info" Content="Динамика развития:" FontSize="16" FontWeight="Bold"/>
+                <lvc:CartesianChart x:Name="DinamicChart" Height="150"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

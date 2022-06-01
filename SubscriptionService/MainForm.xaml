@@ -1,0 +1,43 @@
+﻿<Window x:Class="SubscriptionService.MainForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SubscriptionService"
+        mc:Ignorable="d"
+        Title="MainForm" MinHeight="450" MinWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition x:Name="row2"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" MinWidth="135"/>
+                <ColumnDefinition MinWidth="321"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            <Label Grid.Column="0" Content="Подписка" FontSize="25" Margin="0,20"/>
+            <WrapPanel Grid.Column="1" HorizontalAlignment="Center">
+                <TextBox x:Name="searchPoly" Width="170" Height="25" Margin="0,35,0,0"/>
+                <Button Content="Поиск" Width="60" Height="25" Margin="0,35,0,0" Click="OnSearch"/>
+            </WrapPanel>
+
+            <WrapPanel Grid.Column="2" Orientation="Vertical" Margin="0 0 20 0" HorizontalAlignment="Right">
+                <Label x:Name="NameUser" Content="Иванов иван иванович" FontSize="18"/>
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="ЛК" Height="25" Width="120" Click="OnLK"/>
+                    <Button Content="Выход" Height="25" Width="120" Click="ExitApp"/>
+                </StackPanel>
+                <Label x:Name="idUser" Content="id 11111" FontSize="12" HorizontalAlignment="Center"/>
+            </WrapPanel>
+        </Grid>
+
+        <ScrollViewer Grid.Row="1">
+            <Frame NavigationUIVisibility="Hidden" x:Name="PageController" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto">
+            </Frame>
+        </ScrollViewer>
+    </Grid>
+</Window>

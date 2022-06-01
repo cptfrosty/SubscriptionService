@@ -1,0 +1,29 @@
+﻿<Window x:Class="SubscriptionService.StatisticType"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        xmlns:local="clr-namespace:SubscriptionService"
+        mc:Ignorable="d"
+        Title="StatisticType" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0">
+            <Label Content="Популярность жанров: "/>
+            <lvc:PieChart x:Name="pieChartPopularTypes" Height="200" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="0" Grid.Column="1">
+            <Label Content="Популярность сервисов: "/>
+            <lvc:PieChart x:Name="pieChartPopularService" Height="200" />
+        </StackPanel>
+    </Grid>
+</Window>

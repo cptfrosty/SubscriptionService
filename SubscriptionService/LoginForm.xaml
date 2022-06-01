@@ -1,0 +1,22 @@
+﻿<Window x:Class="SubscriptionService.LoginForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SubscriptionService"
+        mc:Ignorable="d"
+        Title="Подписка. Форма входа" Height="300" Width="500" ResizeMode="NoResize">
+    <Grid>
+        <WrapPanel Orientation="Vertical" Margin="110,90,110,50">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Логин:"/>
+                <TextBox x:Name="login" Width="150" Margin="10,0,0,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <Label Content="Пароль:"/>
+                <PasswordBox x:Name="pass" Width="150" PasswordChar="*" Margin="2,0,0,0"/>
+            </StackPanel>
+            <Button Content="Вход" Margin="90,20,30,0" Click="OnLogIn"/>
+        </WrapPanel>
+    </Grid>
+</Window>
